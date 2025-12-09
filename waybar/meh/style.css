@@ -1,0 +1,180 @@
+@import url("/home/lavander/.cache/wal/colors-waybar.css");
+
+*{
+    padding: 0
+}
+
+
+#waybar.first,
+#waybar.second {
+    background-color: transparent;
+    padding: 40;
+    border-radius: 15;
+}
+
+#workspaces {
+    background:linear-gradient(60deg, @background, @foreground);
+    margin: 3px 10px;
+    padding: 3px 3px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: @color3;
+    opacity: 0.8;
+    border: 2px solid @color3;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 2px 3px;
+    border: 0px;
+    color: #FFF;
+    transition: all 0.1s ease-in-out;
+    opacity: 0.5;
+}
+
+#workspaces button.active {
+    color: #FFF;
+    background: @color4;
+    border-radius: 5px;
+    padding: 0px 15px;
+    transition: all 0.1s ease-in-out;
+    opacity: 1.0;
+}
+
+#workspaces button:hover {
+    color: #FFF;
+    background: @color4;
+    border-radius: 15px;
+    opacity: 0.8;
+}
+
+#clock{
+    background:linear-gradient(60deg, @background, @foreground);
+    margin: 3px 10px;
+    padding: 3px 3px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #FFF;
+    opacity: 0.8;
+    border: 2px solid @color3;
+}
+
+#custom-cava{
+    background:linear-gradient(60deg, @background, @foreground);
+    margin: 3px 10px;
+    padding: 3px 3px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: @color3;
+    opacity: 0.8;
+    border: 2px solid @color3;
+}
+
+#custom-media,
+#hyprland-window {
+    background:linear-gradient(60deg, @background, @foreground);
+    margin: 3px 10px;
+    padding: 3px 3px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #FFF;
+    opacity: 0.8;
+    border: 2px solid @color3;
+}
+
+#hyprland-window.active{
+        background:linear-gradient(60deg, @background, @foreground);
+    margin: 3px 10px;
+    padding: 3px 3px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #FFF;
+    opacity: 0.8;
+    border: 2px solid @color3;
+
+}
+
+#custom-archicon{
+    background: @foreground;
+    margin: 3px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: @color4;
+    opacity: 0.8;
+    border: 2px solid @color3;
+}
+
+#custom-system,
+#network.wifi,
+#custom-sidebar,
+#custom-wallpaper{
+    background: @foreground;
+    margin: 3px 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: @color4;
+    opacity: 0.8;
+    border: 2px solid @color3;
+}
+
+#custom-previous,
+#custom-playpause,
+#custom-next{
+    background: @foreground;
+    margin: 3px 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: @color3;
+    opacity: 0.8;
+    border: 2px solid @color3;
+}
+
+#wlr-taskbar{
+    background: @foreground;
+    margin: 3px 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: @color3;
+    opacity: 0.8;
+    border: 2px solid @color3;
+}
+
+#cpu, 
+#memory,
+#temperature
+{
+    background:linear-gradient(60deg, @background, @foreground);
+    margin: 3px 10px;
+    padding: 5px 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: @color4;
+    opacity: 0.8;
+    border: 2px solid @color3;
+}
+
+#pulseaudio{
+    background: @foreground;
+    margin: 3px 10px;
+    padding: 5px 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: @color4;
+    opacity: 0.8;
+    border: 2px solid @color3;
+}
+
+#pulseaudio-slider,
+#pulseaudio-slider trough{
+ min-height: 80px;
+ background: transparent;
+}
+
+#pulseaudio.muted {
+    background-color: @background;
+    color: #ff0000;
+}

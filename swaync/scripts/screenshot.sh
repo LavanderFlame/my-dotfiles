@@ -1,0 +1,1 @@
+eval grim -g "$(slurp)" - | swappy -f -

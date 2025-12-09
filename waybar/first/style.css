@@ -1,0 +1,170 @@
+@import url("/home/lavander/.cache/wal/colors-waybar.css");
+
+/* ---------------------------------------------------
+ *   Global Rules
+ * --------------------------------------------------- */
+* {
+    font-size: 15px;
+    min-height: 10px;
+    color: white;
+}
+
+window#waybar {
+    border: 2px solid @foreground;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.239);
+}
+
+/* ---------------------------------------------------
+ *   Workspaces (Center)
+ * --------------------------------------------------- */
+#workspaces {
+background: @foreground;
+border-radius: 10px;
+margin: 6px 5px;
+padding: 0 6px;
+}
+
+#workspaces button {
+color: @color1;
+background: transparent;
+padding: 4px;
+transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#workspaces button.occupied {
+color: @color4;
+}
+
+#workspaces button.active {
+color: @color3;
+text-shadow: 0 0 4px @color1;
+}
+
+#workspaces button:hover {
+color: @color5;
+}
+
+#workspaces button.active:hover {
+
+}
+
+
+/* ---------------------------------------------------
+ *   Taskbar (Right)
+ * --------------------------------------------------- */
+#taskbar {
+background: transparent;
+border-radius: 10px;
+padding: 0 5px;
+margin: 6px 5px;
+}
+
+#taskbar button {
+padding: 0 5px;
+margin: 0 3px;
+border-radius: 6px;
+transition: background-color 0.3s ease;
+}
+
+#taskbar button.active,
+#taskbar button:hover {
+background: @color2;
+color: @color7;
+}
+
+#pulseaudio,
+#pulseaudio-slider,
+#pulseaudio#microphone{
+    margin: 6px;
+    padding: 2px;
+}
+
+#pulseaudio#microphone:hover{
+color: @color3;
+border-radius: 15px;
+}
+
+#pulseaudio-slider trough{
+ min-height: 80px;
+ color: @color1;
+}
+
+#pulseaudio-slider slider {
+background: transparent;
+}
+
+#custom-archicon,
+#wlr-taskbar,
+#hyprland-workspaces{
+padding-left: 30px;
+}
+
+#clock, #custom-wallpaper{
+    padding-right: 20px;
+    font-weight: bold;
+}
+
+#clock:hover{
+    color: @color3;
+    border-radius: 15px;
+}
+
+#network:hover{
+color: @color3;
+border-radius: 15px;
+}
+
+#custom-weather:hover{
+color: @color3;
+border-radius: 15px;
+}
+
+#bluetooth:hover{
+color: @color3;
+border-radius: 15px;
+}
+
+#custom-wallpaper:hover{
+color: @color3;
+border-radius: 15px;
+}
+
+#custom-sidebar:hover{
+    color: @color3;
+    border-radius: 15px;
+}
+
+#custom-media,
+#custom-weather,
+#bluetooth,
+#network,
+#custom-sidebar{
+margin: 6px;
+padding-right: 10px;
+}
+
+#cpu,
+#memory,
+#temperature{
+margin: 6px;
+padding-top: 14px;
+}
+
+#custom-previous,
+#custom-playpause,
+#custom-next {
+    padding-right: 20px;
+    margin: 6px;
+}
+
+/* ---------------------------------------------------
+ *   Optional Animation
+ * --------------------------------------------------- */
+@keyframes blink {
+    to {
+        background-color: @color3;
+        color: @color1;
+    }
+}
+

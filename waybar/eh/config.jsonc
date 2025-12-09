@@ -1,0 +1,256 @@
+[
+    {
+        "layer": "bottom",
+        "name": "first",
+        "modules-left": [
+            "custom/archicon",
+            "wlr/taskbar",
+            "hyprland/workspaces"
+        ],
+        "modules-center": [
+            "clock",
+            "custom/wallpaper"
+        ],
+        "modules-right": [
+            "custom/cava",
+            "group/media",
+            "custom/media",
+            "bluetooth",
+            "network",
+            "custom/sidebar"
+        ],
+        "custom/system": {
+            "format": "󰲸",
+            "on-click": "resources",
+            "tooltip-format": "Open music options"
+        },
+        // Group Hardware
+        "group/media": {
+            "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 300,
+                "children-class": "not-memory",
+                "transition-left-to-right": true
+            },
+            "modules": [
+                "custom/system",
+                "custom/previous",
+                "custom/playpause",
+                "custom/next"
+            ]
+        },
+        "custom/playpause": {
+            "format": "󰐎",
+            "on-click": "playerctl --player=%any,app.zen_browser.zen play",
+            "on-click-right": "playerctl --all-players pause"
+        },
+        "custom/previous": {
+            "format": "󰒮",
+            "on-click": "playerctl --player=%any,app.zen_browser.zen previous"
+        },
+        "custom/next": {
+            "format": "󰒭",
+            "on-click": "playerctl --player=%any,app.zen_browser.zen next"
+        },
+        // Media
+        "custom/media": {
+            "interval": 1,
+            "max-length": 90,
+            "exec": "~/.config/waybar/scripts/mediaexec.sh",
+            "on-click": "~/.config/waybar/scripts/mediatoggle.sh"
+        },
+        "custom/archicon": {
+            "format": "",
+            "on-click": "rofi -show drun || pkill rofi",
+            "tooltip": false
+        },
+        "clock": {
+            "format": "{:%I:%M %p}",
+            "format-alt": "{:%d-%m-%Y}",
+            "on-click-right": "gnome-clocks",
+            "tooltip": true,
+            "tooltip-format": "<tt><small>{calendar}</small></tt>",
+            "calendar": {
+                "mode": "month",
+                "mode-mon-col": 3,
+                "on-scroll": 1,
+                "format": {
+                    "months": "<span color='#FFFFFF'>{}</span>",
+                    "days": "<span color='#9c9c9c'>{}</span>",
+                    "weeks": "<span color='#9c9c9c'>W{}</span>",
+                    "weekdays": "<span color='#FFFFFF'>{}</span>",
+                    "today": "<span color='#FFFFFF'><b>{}</b></span>"
+                }
+            },
+            "actions": {
+                "on-click-middle": "mode",
+                "on-scroll-up": "shift_down",
+                "on-scroll-down": "shift_up"
+            }
+        },
+
+       "custom/cava": {
+        "exec": "~/.config/waybar/scripts/cava.sh"
+    },
+        "hyprland/workspaces": {
+            "on-scroll-up": "hyprctl dispatch workspace r-1",
+            "on-scroll-down": "hyprctl dispatch workspace r+1",
+            "on-click": "activate",
+            "active-only": true,
+            "format": "{}",
+            "format-icons": {
+                "urgent": "",
+                "active": "",
+                "default": ""
+            },
+            "persistent-workspaces": {
+                "*": 5
+            },
+            "all-outputs": true,
+            "show-special": true
+        },
+        "wlr/taskbar": {
+            "format": "{icon}",
+            "icon-size": 18,
+            "tooltip-format": "{title}",
+            "sort-by-app-id": false,
+            "on-click": "activate",
+            "on-click-middle": "close",
+            "all-outputs": true,
+            "ignore-list": [
+                "alactritty",
+                "kitty",
+                "foot"
+            ]
+        },
+        "network": {
+            "format": "󰲛  Offline",
+            "format-wifi": " ",
+            "format-ethernet": "󰈀 󰈁",
+            "format-linked": "󰈀 󰈁",
+            "format-disconnected": "󰲛  Offline",
+            "tooltip-format": "󰈀  {ifname} via {gwaddri}",
+            "tooltip-format-wifi": "   Connected \n\nIP: {ipaddr}\nStrength: {signalStrength}%\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+            "tooltip-format-ethernet": "󰈀  {ifname}\n\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+            "tooltip-format-disconnected": "Disconnected",
+            "max-length": 50,
+            "on-click": "nm-connection-editor",
+            "on-click-right": "kitty nmtui"
+        },
+        "bluetooth": {
+            "format": "",
+            "format-disabled": " ",
+            "format-off": " Off",
+            "interval": 30,
+            "on-click": "blueman-manager",
+            "format-no-controller": "",
+            "tooltip-format": " {controller_alias}\n\n{num_connections} connected",
+            "tooltip-format-connected": " {controller_alias}\n\n{num_connections} connected",
+            "tooltip-format-enumerate-connected": " {device_alias}",
+            "tooltip-format-enumerate-connected-battery": " {device_alias}\t{device_battery_percentage}%"
+        },
+        "custom/sidebar": {
+            "format": "󱗼",
+            "tooltip-format": "L: Sidebar\nR: Reload configuration (wait 5-10 seconds)",
+            "on-click": "swaync-client -t",
+            "on-click-right": "swaync-client -R && swaync-client -rs && sleep 1 && swaync-client -t"
+        },
+        "custom/wallpaper": {
+            "format": "",
+            "on-click": "waypaper",
+            "on-click-right": "waypaper --random",
+            "tooltip-format": "Change wallpaper"
+        }
+    },
+    {
+        "layer": "bottom",
+        "position": "left",
+        "name": "second",
+        "spacing": 6,
+        "modules-left": [
+            "cpu",
+            "memory",
+            "temperature"
+        ],
+        "modules-center": [
+            "hyprland/window"
+        ],
+        "modules-right": [
+            "pulseaudio#microphone",
+            "pulseaudio/slider",
+            "pulseaudio",
+        ],
+        "pulseaudio#microphone": {
+            "format": "{format_source}",
+            "format-source": "<span size='14pt'>󰍬</span>",
+            "format-source-muted": "<span size='14pt'>󰍭</span>",
+            "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+            "on-click-right": "pavucontrol -t 4",
+            "tooltip": false
+        },
+        "pulseaudio/slider": {
+            "format": "{volume}%",
+            "min": 0,
+            "max": 100,
+            "orientation": "vertical",
+            "format-muted": " MUTE",
+            "step": 5,
+            "tooltip": false
+        },
+        "pulseaudio": {
+            "format": "{volume}%",
+            "format-muted": " {format_source}",
+            "orientation": "vertical",
+            "format-icons": {
+                "default": [
+                    "",
+                    ""
+                ]
+            }
+        },
+        "hyprland/window": {
+            "rotate": 90,
+            "max-length": 50,
+            "orientation": "vertical",
+            "separate-outputs": false,
+            "rewrite": {
+                "": "  Hyprland",
+                "~": "   Terminal",
+                "zsh": "   Terminal",
+                "class<kitty>": "   Terminal",
+                "VLC media player": "󰕼   VLC Media Player",
+                "(.*) - VLC media player": "󰕼   VLC | $1",
+                "(.*) - mpv": "   MPV | $1",
+                "Authenticate": "󰻌   Authenticate",
+                "• Discord(.*)": "Discord$1",
+                "(.*)Discord(.*)": "   $1Discord$2"
+            }
+        },
+        "cpu": {
+            "rotate": 90,
+            "format": "{usage}% ",
+            "tooltip": true,
+            "tooltip-format": "Uso de CPU: {usage}%\nNúcleos: {cores}"
+        },
+        "memory": {
+            "rotate": 90,
+            "format": "{}% 󰍛",
+            "tooltip": true,
+            "tooltip-format": "RAM en uso: {used} / {total} ({percentage}%)"
+        },
+        "disk": {
+            "format": "{percentage_free}% ",
+            "tooltip": true,
+            "tooltip-format": "Espacio libre: {free} / {total} ({percentage_free}%)"
+        },
+        "temperature": {
+            "rotate": 90,
+            "format": "{temperatureC}°C {icon}",
+            "tooltip": true,
+            "tooltip-format": "Temperatura actual: {temperatureC}°C\nCrítico si > 80°C",
+            "format-icons": [
+                ""
+            ]
+        },
+    }
+]

@@ -1,0 +1,193 @@
+@import url("/home/lavander/.cache/wal/colors-waybar.css");
+
+* {
+  /* General taskbar font, I like maple mono ^-^*/
+  font-family: Maple Mono;
+  border-radius: 8;
+  font-size: 14px;
+  padding: 0px;
+  background: transparent;
+}
+
+window#waybar {
+  /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
+  background-image: linear-gradient(to bottom, @background 100%);
+  padding: 0px;
+  border-style: none;
+}
+
+#network,
+#clock,
+#custom-archicon,
+#tray,
+#workspaces,
+#pulseaudio,
+#custom-media,
+#custom-previous,
+#custom-playpause,
+#custom-next,
+#custom-weather,
+#wlr-taskbar,
+#custom-wallpaper,
+#hyprland-window,
+#custom-sidebar
+ {
+  background-image: linear-gradient(to bottom, @color1 50%);
+
+  margin: 6px;
+  margin-right: 0px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: #d8cab8;
+
+  border-style: none;
+  transition-duration: 120ms;
+}
+
+#hyprland-window{
+  color: @color5;
+  background-color: @color9;
+}
+
+#workspaces,
+#wlr-taskbar,
+#custom-archicon{
+    margin: 6px;
+}
+
+#wlr-taskbar{
+  padding-left: 30px;
+}
+
+#network,
+#clock,
+#custom-media,
+#custom-previous,
+#custom-playpause,
+#custom-next,
+#custom-weather,
+#custom-wallpaper button:hover{
+  background-color: @foreground;
+}
+
+#network,
+#clock,
+#custom-media,
+#custom-previous,
+#custom-playpause,
+#custom-next,
+#custom-weather,
+#custom-wallpaper:hover{
+  background-color: @foreground;
+}
+
+#cpu,
+#memory,
+#temperature{
+  margin-top: 6px;
+  border-radius: 6px;
+  color: @color6;
+  border-style: none;
+  transition-duration: 120ms;
+}
+
+#clock {
+  margin-right: 6px;
+}
+
+#pulseaudio:hover {
+  background-image: linear-gradient(to bottom, @foreground 100%);
+  color: @color6;
+  transition-duration: 120ms;
+}
+
+#custom-archicon {
+  font-weight: bold;
+  transition-duration: 120ms;
+}
+#custom-archicon:hover {
+  background-image: linear-gradient(to bottom, @foreground 100%);
+  transition-duration: 120ms;
+}
+
+#tray menu {
+  background-color: #141216;
+  color: #d8cab8;
+  padding: 4px;
+}
+#tray menu menuitem {
+  background-image: linear-gradient(to bottom, #27232b 100%);
+
+  margin: 3px;
+  color: @color6;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #27232b;
+}
+#tray menu menuitem:hover {
+  background-image: linear-gradient(to bottom, #27232b 100%);
+  color: #ac82e9;
+  font-weight: bold;
+}
+
+#workspaces button {
+  transition-duration: 100ms;
+  all: initial;
+  min-width: 0;
+  font-weight: bold;
+  color: @color6;
+  margin-right: 0.2cm;
+  margin-left: 0.2cm;
+}
+
+#workspaces button:hover {
+  transition-duration: 120ms;
+  color: @foreground;
+}
+#workspaces button.focused {
+  color: @foreground;
+  font-weight: bold;
+}
+#workspaces button.active {
+  color: @foreground;
+  font-weight: bold;
+}
+#workspaces button.urgent {
+  color: #fcb167;
+}
+
+
+#workspaces button {
+  transition-duration: 100ms;
+  all: initial;
+  min-width: 0;
+  font-weight: bold;
+  color: @color6;
+  margin-right: 0.2cm;
+  margin-left: 0.2cm;
+}
+
+#custom-media button:hover {
+  transition-duration: 120ms;
+  color: @foreground;
+}
+#custom-media button.focused {
+  color: @foreground;
+  font-weight: bold;
+}
+#custom-media button.active {
+  color: @foreground;
+  font-weight: bold;
+}
+#custom-media button.urgent {
+  color: #fcb167;
+}
+
+#pulseaudio-slider trough{
+ min-height: 80px;
+ color: @color1;
+}
+
+#pulseaudio-slider slider {
+background: transparent;
+}
